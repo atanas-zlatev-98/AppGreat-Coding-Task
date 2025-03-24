@@ -23,9 +23,7 @@ const CreateDocument = () => {
         e.preventDefault();
         
         try{
-            if(!formData.title || !form.title){
-                return
-            }
+           
            await createNewDocument(formData);
         }catch(err){
             throw new Error(err.message)
@@ -43,6 +41,10 @@ const CreateDocument = () => {
                     <div className="formGroup">
                         <label htmlFor="description">Description</label>
                         <input type="text" id="description" name="description" value={formData.description} onChange={changeHandler}></input>
+                    </div>
+                    <div className="formGroup">
+                        <label htmlFor="description">Upload File</label>
+                        <input type="file" id="description" name="description"></input>
                     </div>
 
                     <button type='submit'>Create Document</button>
